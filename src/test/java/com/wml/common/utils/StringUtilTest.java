@@ -37,5 +37,28 @@ public class StringUtilTest {
 		String str = StringUtil.generateChineseName();
 		System.out.println(str);
 	}
-
+	
+	@Test
+	public void testGetValue() {
+		String value = StringUtil.getValue("八维教育学院", 4);
+		System.out.println(value);
+	}
+	
+	@Test
+	public void testISNumber(){
+		boolean number = StringUtil.isNumber("1212.1");
+		System.out.println(number);
+	}
+	
+	@Test
+	public void testISPhone(){
+		boolean number = StringUtil.isPhone("134564124351");
+		System.out.println(number);
+	}
+	
+	@Test
+	public void testISEmail(){
+		boolean number = StringUtil.isEmail("1047883374@qq.com");
+		System.out.println(number);
+	}
 }

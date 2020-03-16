@@ -57,5 +57,40 @@ public class StringUtil {
 		String name2 = randomChineseString(RandomUtil.random(1, 2));
 		return name1 + name2;
 	}
-
+	
+	 //八维教育学院   经过处理后,返回 八维****
+	public static String getValue(String str,int start){
+		String s1 = str.substring(start);
+		String s2 = "";
+		for (int i = 0; i < s1.length(); i++) {
+			s2+="*";
+		}
+		return str.substring(0,start)+s2;
+	}
+	
+	//判断一个字符串是否是数字
+	public static boolean isNumber(String src){
+		String reg = "^(-)?[0-9]+(\\.[0-9]+)?$";
+		return src.matches(reg);
+	}
+	
+	//判断是否是中国的手机号
+	public static boolean isPhone(String src){
+		String reg = "^1[3|4|5|7|8]\\d{9}$";
+		return src.matches(reg);
+	}
+	
+	//判断是否是邮箱
+	public static boolean isEmail(String src){
+		String reg = "^\\w+\\@\\w+\\.\\w+$";
+		return src.matches(reg);
+	}
+	
+	//根据正则在字符串提取一段值，用于后面在url地址里提取ID值
+	public static String getPlaceholderValue(String src){
+		String[] split = src.split("-");
+		String string = split[2];
+		String substring = string.substring(0, string.indexOf("."));
+		return substring;
+	}
 }
